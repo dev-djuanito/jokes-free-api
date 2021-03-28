@@ -1,0 +1,24 @@
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h1 class="display-4"><%= content.dataForTitle %></h1>
+</div>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<%
+	if (content.jokes) {
+		%>
+		<div class="row">
+			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+				<div class="list-group">
+					<%
+					content.jokes.forEach( (joke) => {
+					%>
+						<%- include('../components/joke-list-item', { jokeData: joke }); %>
+					<%
+					});
+					%>
+				</div>
+			</div>
+		</div>
+		<%
+	};
+	%>
+</div>
